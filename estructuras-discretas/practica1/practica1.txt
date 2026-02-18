@@ -1,12 +1,30 @@
-Práctica 1 - Estructuras Discretas
+1. ¿Cuáles son las principales diferencias entre Haskell y Racket?
 
-Este archivo contiene los ejercicios y tareas de la práctica 1.
+Haskell es un lenguaje puramente funcional, lo que significa que todo se basa en funciones y evita los efectos secundarios. Además, es un lenguaje fuertemente tipado y con evaluación perezosa, lo que ayuda a escribir programas más seguros y eficientes.
+Por otro lado, Racket está basado en Lisp y es un lenguaje multiparadigma, ya que permite programación funcional, imperativa y orientada a objetos. Racket se enfoca mucho en la creación de lenguajes y es más flexible, mientras que Haskell es más estricto y matemático en su enfoque.
 
-Temas a cubrir:
-- Teoría de conjuntos
-- Lógica proposicional
-- Relaciones
-- Funciones
+2. ¿Cuáles son las principales diferencias entre Haskell y Java?
 
-Instrucciones:
-Completa todos los ejercicios propuestos y guarda tus respuestas en este archivo.
+Haskell es un lenguaje funcional, mientras que Java es principalmente orientado a objetos. En Haskell se trabaja con funciones puras y tipos inmutables, lo que reduce errores, mientras que Java utiliza clases, objetos y estados mutables.
+Además, Haskell usa evaluación perezosa y un sistema de tipos muy avanzado, mientras que Java es más directo y popular en aplicaciones empresariales, lo que lo hace más común en la industria.
+
+3. ¿Por qué Haskell no ha alcanzado una adopción significativa en la industria del software?
+
+Haskell no ha sido ampliamente adoptado en la industria principalmente por su curva de aprendizaje, ya que su paradigma funcional puro y su sistema de tipos pueden resultar complejos para programadores acostumbrados a lenguajes imperativos u orientados a objetos.
+Además, existe una menor cantidad de desarrolladores, librerías comerciales y soporte empresarial en comparación con otros lenguajes como Java o Python, lo que hace que las empresas prefieran tecnologías más conocidas y con mayor respaldo.
+
+4. Si pudieras realizar una analogía simple entre Git y GitHub, ¿cuál sería?
+
+  Es pensar que Git es como una libreta donde llevas el control de todos los cambios de un proyecto o tarea , mientras que GitHub es como una nube o un drive mejorada donde guardas esa libreta o notas y la compartes con otras personas para trabajar en equipo,.
+
+Bibliografía
+
+Lenguaje de programación Racket. (2026, January 29). Codeporting.ai. https://www.codeporting.ai/es/language/racke
+
+Swetha. (2023, April 28). Java vs. Haskell: Understanding the key differences. Medium. https://blog.devgenius.io/java-vs-haskell-understanding-the-key-differences-5b6b777c577e
+
+(N.d.). Quora.com. Retrieved February 18, 2026, from https://www.quora.com/What-are-the-pros-and-cons-of-Racket-and-Haskell-for-beginners-in-functional-programming-Which-one-would-you-recommend-for-someone-just-starting-out-and-why
+
+(N.d.-a). Quora.com. Retrieved February 18, 2026, from https://www.quora.com/What-are-the-pros-and-cons-of-Racket-and-Haskell-for-beginners-in-functional-programming-Which-one-would-you-recommend-for-someone-just-starting-out-and-why
+
+(N.d.-b). Reddit.com. Retrieved February 18, 2026, from https://www.reddit.com/r/haskell/comments/eoscm2/java_vs_haskell/?tl=es-419

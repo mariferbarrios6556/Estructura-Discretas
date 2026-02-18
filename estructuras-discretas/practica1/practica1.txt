@@ -1,0 +1,12 @@
+Práctica 1 - Estructuras Discretas
+
+Este archivo contiene los ejercicios y tareas de la práctica 1.
+
+Temas a cubrir:
+- Teoría de conjuntos
+- Lógica proposicional
+- Relaciones
+- Funciones
+
+Instrucciones:
+Completa todos los ejercicios propuestos y guarda tus respuestas en este archivo.

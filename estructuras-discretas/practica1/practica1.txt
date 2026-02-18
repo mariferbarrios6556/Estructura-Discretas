@@ -1,12 +1,12 @@
 1. ¿Cuáles son las principales diferencias entre Haskell y Racket?
 
-Haskell es un lenguaje puramente funcional, lo que significa que todo se basa en funciones y evita los efectos secundarios. Además, es un lenguaje fuertemente tipado y con evaluación perezosa, lo que ayuda a escribir programas más seguros y eficientes.
+Haskell es un lenguaje puramente funcional, lo que significa que todo se basa en funciones y evita los efectos secundarios. Así que es un lenguaje fuertemente tipado y con evaluación perezosa, lo que ayuda a escribir programas más seguros y eficientes.
 Por otro lado, Racket está basado en Lisp y es un lenguaje multiparadigma, ya que permite programación funcional, imperativa y orientada a objetos. Racket se enfoca mucho en la creación de lenguajes y es más flexible, mientras que Haskell es más estricto y matemático en su enfoque.
 
 2. ¿Cuáles son las principales diferencias entre Haskell y Java?
 
 Haskell es un lenguaje funcional, mientras que Java es principalmente orientado a objetos. En Haskell se trabaja con funciones puras y tipos inmutables, lo que reduce errores, mientras que Java utiliza clases, objetos y estados mutables.
-Además, Haskell usa evaluación perezosa y un sistema de tipos muy avanzado, mientras que Java es más directo y popular en aplicaciones empresariales, lo que lo hace más común en la industria.
+Además, Haskell usa evaluación perezosa y un sistema de tipos muy avanzado, mientras que java es más directo y popular en aplicaciones empresariales, lo que lo hace más común en la industria.
 
 3. ¿Por qué Haskell no ha alcanzado una adopción significativa en la industria del software?
 
@@ -15,7 +15,7 @@ Además, existe una menor cantidad de desarrolladores, librerías comerciales y 
 
 4. Si pudieras realizar una analogía simple entre Git y GitHub, ¿cuál sería?
 
-  Es pensar que Git es como una libreta donde llevas el control de todos los cambios de un proyecto o tarea , mientras que GitHub es como una nube o un drive mejorada donde guardas esa libreta o notas y la compartes con otras personas para trabajar en equipo,.
+  Es pensar que Git es como una libreta donde llevamos la inspección de todos los cambios de un proyecto o tarea , mientras que GitHub es como una nube o un drive mejorada donde guardas esa libreta o notas y la compartes con otras personas para trabajar en equipo.
 
 Bibliografía
 

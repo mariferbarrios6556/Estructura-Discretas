@@ -1,3 +1,6 @@
-# Práctica 2
+# Práctica 02: Introducción a Haskell
 
-Esta carpeta contiene los ejercicios de la práctica 2.
+## Objetivo
+Implementar funciones básicas en Haskell para familiarizarse con sintaxis, operadores y tipos de datos utilizando GHCI como entorno de pruebas.
+
+

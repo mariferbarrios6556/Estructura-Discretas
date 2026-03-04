@@ -1,5 +1,8 @@
 -- Práctica 02: Introducción Haskell
--- Estructuras Discretas, UNAM 2026-I
+-- Estructuras Discretas, UNAM 2026-II
+
+
+import Data.Bits ((.&.))
 
 -- 2. sayHello
 -- Recibe un String y concatena "Hello, " al principio y " !" al final.
@@ -27,7 +30,7 @@ esDescendiente :: Int -> Int -> Int -> Int -> Bool
 esDescendiente x y z w = x > y && y > z && z > w
 
 -- 7. esDivisible
--- Recibe dos enteros x, y y devuelve "x es divisible por y" si y ≠ 0 y x mod y == 0.
+-- Recibe dos enteros x, y y devuelve mensaje correspondiente.
 esDivisible :: Int -> Int -> String
 esDivisible x y
   | y == 0 = "No se puede dividir entre cero"
@@ -35,10 +38,7 @@ esDivisible x y
   | otherwise = show x ++ " no es divisible por " ++ show y
 
 -- 8. esPar
--- Verifica si n es par usando operaciones a nivel de bits (NO mod ni recursión).
--- Explicación: El operador bitwise AND (&) con 1 verifica si el bit menos significativo es 0 (par) o 1 (impar).
--- No se usa '&&' porque es operador lógico para booleanos, no bitwise para enteros.
-import Data.Bits ( (.&.) )
+-- Verifica si n es par usando operaciones a nivel de bits.
 esPar :: Int -> Bool
 esPar n = (n .&. 1) == 0
 
@@ -50,14 +50,18 @@ hipotenusa b h = sqrt (b * b + h * h)
 -- 10. pendiente
 -- Recibe dos tuplas (x1, y1), (x2, y2), y calcula la pendiente.
 pendiente :: (Float, Float) -> (Float, Float) -> Float
-pendiente (x1, y1) (x2, y2) = (y2 - y1) / (x2 - x1)
+pendiente (x1, y1) (x2, y2)
+  | x2 == x1 = error "La pendiente es indefinida (division entre cero)"
+  | otherwise = (y2 - y1) / (x2 - x1)
 
 -- 11. distanciaPuntos
 -- Recibe dos tuplas y devuelve la distancia euclidiana.
 distanciaPuntos :: (Float, Float) -> (Float, Float) -> Float
-distanciaPuntos (x1, y1) (x2, y2) = sqrt ((x2 - x1)^2 + (y2 - y1)^2)
+distanciaPuntos (x1, y1) (x2, y2) =
+  sqrt ((x2 - x1)^2 + (y2 - y1)^2)
 
 -- 12. cuadrados (Extra)
 -- Recibe una lista y regresa una lista de los cuadrados, sin map ni recursión.
 cuadrados :: [Int] -> [Int]
 cuadrados xs = [x*x | x <- xs]
+

@@ -1,7 +1,9 @@
 # Práctica 02 – Introducción a Haskell
 
 Materia: Estructuras Discretas
+
 Semestre: 2026-II
+
 Alumna: María Fernanda Barrios Vega
 
 ## Objetivo de la práctica

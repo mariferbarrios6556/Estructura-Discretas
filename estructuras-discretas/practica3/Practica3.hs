@@ -1,19 +1,20 @@
 ---------------------------------------------------------
--- MÓDULO 1
--- Archivo: Modulos.hs
--- Aquí definimos funciones auxiliares que pueden
--- reutilizarse en otros módulos
+-- PRACTICA 03
+-- Tipos de datos y listas por comprensión
+-- Facultad de Ciencias - UNAM
 ---------------------------------------------------------
 
-module Modulos where
+module Main where
 
 ---------------------------------------------------------
--- EJERCICIO: esPar
--- Esta función determina si un número es par.
+-- EJERCICIO 1
+-- Función esPar
+--
+-- Determina si un número es par.
 -- Un número es par cuando el residuo de dividirlo
 -- entre 2 es igual a 0.
 --
--- Ejemplo en ghci:
+-- Ejemplo:
 -- ghci> esPar 4
 -- True
 ---------------------------------------------------------
@@ -21,20 +22,14 @@ module Modulos where
 esPar :: Int -> Bool
 esPar n = mod n 2 == 0
 
----------------------------------------------------------
--- MÓDULO 2
--- Archivo: Tipos.hs
--- Aquí se define un tipo de dato propio para representar
--- algunas materias del primer semestre de Ciencias
--- de la Computación.
----------------------------------------------------------
-
-module Tipos where
 
 ---------------------------------------------------------
--- EJERCICIO: Definición del tipo Materia
--- Se crea un tipo de dato llamado Materia que contiene
--- algunas asignaturas del primer semestre.
+-- EJERCICIO 2
+-- Definición del tipo Materia
+--
+-- Se define un tipo de dato para representar algunas
+-- materias del primer semestre de Ciencias de la
+-- Computación.
 ---------------------------------------------------------
 
 data Materia =
@@ -46,8 +41,7 @@ data Materia =
     deriving (Eq)
 
 ---------------------------------------------------------
--- Se define cómo se mostrarán las materias cuando
--- se impriman en pantalla con print.
+-- Se define cómo se mostrarán las materias
 ---------------------------------------------------------
 
 instance Show Materia where
@@ -58,14 +52,12 @@ instance Show Materia where
     show FisicaI = "Fisica I"
 
 ---------------------------------------------------------
--- EJERCICIO 2
 -- Función creditos
 --
 -- Recibe un número entero que representa los créditos
--- y devuelve una lista de materias que tienen ese número
--- de créditos.
+-- y devuelve una lista de materias que tienen ese número.
 --
--- Ejemplo en ghci:
+-- Ejemplo:
 -- ghci> creditos 12
 -- [Introduccion a las CC]
 ---------------------------------------------------------
@@ -73,30 +65,18 @@ instance Show Materia where
 creditos :: Int -> [Materia]
 creditos n =
     if n == 12 then [IntroduccionCC]
-    else if n == 10 then [EstructurasDiscretas,AlgebraSuperior,CalculoDiferencial,FisicaI]
+    else if n == 10 then [EstructurasDiscretas, AlgebraSuperior, CalculoDiferencial, FisicaI]
     else []
 
-    ---------------------------------------------------------
--- MÓDULO 3
--- Archivo: Comprension.hs
--- En este módulo se implementan funciones utilizando
--- listas por comprensión.
----------------------------------------------------------
-
-module Comprension where
-
--- Importamos la función esPar del módulo Modulos
-import Modulos (esPar)
 
 ---------------------------------------------------------
 -- EJERCICIO 4
 -- Función soloPares
 --
--- Recibe una lista de números enteros y devuelve
--- únicamente los números pares utilizando una
--- lista por comprensión.
+-- Recibe una lista y devuelve únicamente los números pares
+-- usando listas por comprensión.
 --
--- Ejemplo en ghci:
+-- Ejemplo:
 -- ghci> soloPares [1,2,3,4]
 -- [2,4]
 ---------------------------------------------------------
@@ -104,15 +84,14 @@ import Modulos (esPar)
 soloPares :: [Int] -> [Int]
 soloPares lista = [x | x <- lista, esPar x]
 
+
 ---------------------------------------------------------
 -- EJERCICIO 5
 -- Función negativos
 --
 -- Cuenta cuántos números negativos hay en una lista.
--- Para hacerlo primero genera una lista con los
--- números negativos y después calcula su longitud.
 --
--- Ejemplo en ghci:
+-- Ejemplo:
 -- ghci> negativos [-1,2,4,6,-4]
 -- 2
 ---------------------------------------------------------
@@ -120,12 +99,11 @@ soloPares lista = [x | x <- lista, esPar x]
 negativos :: [Int] -> Int
 negativos lista = length [x | x <- lista, x < 0]
 
+
 ---------------------------------------------------------
 -- Función auxiliar: esPrimo
 --
 -- Determina si un número es primo.
--- Un número primo es aquel que solo es divisible
--- entre 1 y él mismo.
 ---------------------------------------------------------
 
 esPrimo :: Int -> Bool
@@ -133,14 +111,14 @@ esPrimo n =
     if n < 2 then False
     else length [x | x <- [2..n-1], mod n x == 0] == 0
 
+
 ---------------------------------------------------------
 -- EJERCICIO 6
 -- Función primos
 --
--- Recibe una lista de números y devuelve únicamente
--- aquellos que son números primos.
+-- Devuelve los números primos de una lista.
 --
--- Ejemplo en ghci:
+-- Ejemplo:
 -- ghci> primos [1..20]
 -- [2,3,5,7,11,13,17,19]
 ---------------------------------------------------------
@@ -148,11 +126,11 @@ esPrimo n =
 primos :: [Int] -> [Int]
 primos lista = [x | x <- lista, esPrimo x]
 
+
 ---------------------------------------------------------
 -- Función auxiliar: mcd
 --
--- Calcula el máximo común divisor entre dos números
--- utilizando el algoritmo de Euclides.
+-- Calcula el máximo común divisor usando Euclides.
 ---------------------------------------------------------
 
 mcd :: Int -> Int -> Int
@@ -160,19 +138,38 @@ mcd a b =
     if b == 0 then a
     else mcd b (mod a b)
 
+
 ---------------------------------------------------------
 -- EJERCICIO 7
 -- Función coprimos
 --
--- Recibe un número n y devuelve una lista con los
--- números menores que n que son coprimos con él.
--- Dos números son coprimos si su máximo común
--- divisor es igual a 1.
+-- Devuelve los números menores que n que son coprimos con él.
 --
--- Ejemplo en ghci:
+-- Ejemplo:
 -- ghci> coprimos 10
 -- [1,3,7,9]
 ---------------------------------------------------------
 
 coprimos :: Int -> [Int]
 coprimos n = [x | x <- [1..n-1], mcd x n == 1]
+
+
+---------------------------------------------------------
+-- FUNCIÓN PRINCIPAL
+-- Ejecuta pruebas de todas las funciones
+---------------------------------------------------------
+
+main :: IO ()
+main = do
+    putStrLn "Práctica 03"
+
+    print (creditos 12)
+    print (creditos 10)
+
+    print (soloPares [1,2,3,4,5,6])
+
+    print (negativos [-1,2,4,6,-4])
+
+    print (primos [1..20])
+
+    print (coprimos 10)

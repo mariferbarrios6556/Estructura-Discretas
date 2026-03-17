@@ -142,3 +142,9 @@ feat: implement primos function
 feat: implement coprimos function
 docs: add README documentation
 ```
+# Evidencia
+
+[Evidencia de ejecución](<img width="880" height="516" alt="image" src="https://github.com/user-attachments/assets/84179341-9cbf-4516-959d-c0c5ead7cc31" />
+
+
+)

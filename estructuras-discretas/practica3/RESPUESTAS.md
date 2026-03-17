@@ -8,12 +8,12 @@
 
 ## Diferencia entre `Num` e `Int`
 
-La diferencia entre `Num` e `Int` es que **Num es una clase de tipo**, mientras que **Int es un tipo de dato concreto**.
+La diferencia entre `Num` e `Int` es que Num es una clase de tipo, mientras que Int es un tipo de dato concreto.
 
-Una **clase de tipo** define un conjunto de operaciones que ciertos tipos pueden implementar.
+Una clase de tipo define un conjunto de operaciones que ciertos tipos pueden implementar.
 En el caso de `Num`, define operaciones numéricas como suma, resta y multiplicación.
 
-Por otro lado, `Int` es un tipo específico que representa **números enteros con un rango limitado**, y es una instancia de la clase `Num`.
+Por otro lado, `Int` es un tipo específico que representa números enteros con un rango limitado, y es una instancia de la clase `Num`.
 
 ### Ejemplo en ghci
 
@@ -35,7 +35,6 @@ Aquí vemos que `5` es un valor del tipo `Int`.
 
 # Actividad 2
 
-## Función créditos
 
 Se creó un tipo de dato llamado `Materia` que representa algunas materias del primer semestre de Ciencias de la Computación.
 
@@ -55,7 +54,6 @@ ghci> creditos 10
 
 # Actividad 3
 
-## Análisis de allPairs
 
 La siguiente definición intenta generar todos los pares de números naturales.
 
@@ -63,7 +61,7 @@ La siguiente definición intenta generar todos los pares de números naturales.
 allPairs = [(x,y) | x <- [0..], y <- [0..]]
 ```
 
-Sin embargo esta definición **no funciona correctamente**, ya que para cada valor de `x` se intenta generar todos los valores posibles de `y` antes de pasar al siguiente `x`.
+Sin embargo esta definición no funciona correctamente, ya que para cada valor de `x` se intenta generar todos los valores posibles de `y` antes de pasar al siguiente `x`.
 
 Como la lista `[0..]` es infinita, el programa nunca termina de generar los valores de `y` para `x = 0`, por lo que nunca llega a producir pares donde `x` sea mayor que 0.
 
@@ -79,8 +77,6 @@ De esta manera se garantiza que todos los pares aparecerán eventualmente.
 
 # Actividad 4
 
-## Función soloPares
-
 La función recibe una lista de enteros y devuelve únicamente los números pares.
 
 ### Ejemplo
@@ -93,8 +89,6 @@ ghci> soloPares [1,2,3,4]
 ---
 
 # Actividad 5
-
-## Función negativos
 
 Esta función cuenta cuántos números negativos existen dentro de una lista.
 
@@ -109,7 +103,6 @@ ghci> negativos [-1,2,4,6,-4]
 
 # Actividad 6
 
-## Función primos
 
 Esta función recibe una lista de números y devuelve únicamente aquellos que son números primos.
 
@@ -124,7 +117,6 @@ ghci> primos [1..20]
 
 # Actividad 7
 
-## Función coprimos
 
 Esta función recibe un número entero `n` y devuelve una lista de números menores que `n` que son coprimos con él.
 

@@ -137,5 +137,6 @@ Si se tuviera que elegir una sola implementación, sería preferible quedarse co
 * Se documentaron ejemplos de uso en cada función.
 ## Captura de ejecución
 
-![Ejecución en GHCi](<img width="535" height="253" alt="image" src="https://github.com/user-attachments/assets/7b7d8d73-c4cc-40a1-98d8-3fea53f3f7a5" />
+![Ejecución en GHCi](<img width="535" height="253" alt="image" src="https://github.com/user-attachments/assets/252c019e-3577-4a9f-a67b-298e8e4f9d23" />
+
 )

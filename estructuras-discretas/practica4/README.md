@@ -2,11 +2,11 @@
 
 ## Objetivo
 
-El objetivo de esta práctica es implementar funciones recursivas utilizando tipos de datos algebraicos definidos por el usuario en Haskell. Se busca comprender la representación de números naturales, enteros y estructuras anidadas (matrioskas), así como el uso de la recursión para definir operaciones matemáticas básicas y manipulación de estructuras.
+El objetivo de esta práctica fue implementar funciones recursivas usando tipos de datos definidos por el usuario en Haskell. Se trabajó con números naturales, números enteros y estructuras anidadas llamadas matrioskas, con el fin de entender cómo representar datos y realizar operaciones mediante recursión.
 
 ## Tiempo requerido
 
-El tiempo estimado para la realización de esta práctica es de 3 a 4 horas, considerando la implementación de las funciones, pruebas en GHCi, documentación y comparación de archivos.
+El tiempo aproximado para realizar la práctica fue de 3 a 4 horas, considerando la implementación de las funciones, pruebas en GHCi y la elaboración del README.
 
 ## Estructuras de datos utilizadas
 
@@ -16,11 +16,7 @@ data Entero = Zero | Succ Entero | Neg Entero deriving (Eq, Show)
 data Matrioska = Mati | Cont Matrioska deriving (Eq, Show)
 ```
 
-Estas estructuras permiten representar:
-
-* Números naturales mediante sucesores.
-* Números enteros con signo positivo y negativo.
-* Matrioskas como estructuras anidadas.
+Estas estructuras se utilizaron para representar números naturales mediante sucesores, números enteros con signo y matrioskas como estructuras anidadas.
 
 ## Actividades realizadas
 
@@ -28,33 +24,27 @@ Estas estructuras permiten representar:
 
 Se implementó la función `a_natural`, la cual convierte un entero no negativo a su representación en el tipo `Natural`.
 
-Ejemplos de uso:
+Ejemplo:
 
 ```
-ghci> a_natural 0
-Cero
-
 ghci> a_natural 2
 S (S Cero)
 ```
 
 ### 2. Conversión de Natural a entero
 
-Se definió la función `a_entero` para obtener el valor entero correspondiente a un número natural.
+La función `a_entero` convierte un valor del tipo `Natural` a su valor entero.
 
-Ejemplos:
+Ejemplo:
 
 ```
-ghci> a_entero Cero
-0
-
 ghci> a_entero (S (S (S Cero)))
 3
 ```
 
 ### 3. Potencia de números naturales
 
-Se implementó la función `potenciaNat`, la cual eleva un número natural a otro natural usando recursión.
+Se implementó la función `potenciaNat`, que eleva un número natural a la potencia de otro usando recursión.
 
 Ejemplo:
 
@@ -65,7 +55,7 @@ S (S (S (S (S (S (S (S (S Cero))))))))
 
 ### 4. Factorial de un número natural
 
-Se definió la función `facNat` que calcula el factorial de un número natural.
+La función `facNat` calcula el factorial de un número natural.
 
 Ejemplo:
 
@@ -76,67 +66,67 @@ S (S (S (S (S (S Cero)))))
 
 ### 5. Multiplicación de enteros
 
-Se implementó la función `multiEnt` que multiplica dos valores del tipo `Entero`, considerando signos positivos y negativos.
-
-Ejemplo:
-
-```
-ghci> multiEnt (Neg (Succ (Succ (Succ (Succ Zero))))) (Succ (Succ Zero))
-Neg (Succ (Succ (Succ (Succ (Succ (Succ (Succ (Succ Zero))))))))
-```
+Se implementó la función `multiEnt`, que multiplica dos valores del tipo `Entero`, considerando signos positivos y negativos.
 
 ### 6. Comparación de matrioskas
 
 La función `mayorIgual` compara dos matrioskas y devuelve `True` si la primera contiene al menos tantas capas como la segunda.
 
-Ejemplos:
+Ejemplo:
 
 ```
-ghci> mayorIgual Mati Mati
-True
-
 ghci> mayorIgual (Cont (Cont Mati)) (Cont (Cont (Cont Mati)))
 False
 ```
 
 ### 7. Aplanar matrioskas
 
-Se implementó la función `aplana` que convierte una matrioska anidada en una lista desde la más externa hasta la más interna.
+La función `aplana` convierte una matrioska anidada en una lista desde la más externa hasta la más interna.
 
-Ejemplos:
+Ejemplo:
 
 ```
-ghci> aplana Mati
-[Mati]
-
 ghci> aplana (Cont (Cont Mati))
 [Cont (Cont Mati), Cont Mati, Mati]
 ```
 
-## Análisis de archivos enteros.hs y entero.hs
+## Organización del proyecto
 
-### 1. Diferencia entre las operaciones implementadas
+Para la práctica se crearon los siguientes archivos:
 
-La principal diferencia entre ambos archivos es la forma en que se manejan los casos de los números enteros.
-En `entero.hs` las operaciones se definen de forma más directa, considerando únicamente los casos básicos y dejando que algunas combinaciones se resuelvan mediante recursión indirecta.
+* Natural.hs
+* Entero.hs
+* Mati.hs
+* Auxiliar.hs
 
-Por otro lado, en `enteros.hs` se contemplan explícitamente más combinaciones posibles entre números positivos y negativos, lo que hace que las funciones sean más completas y robustas. En esta implementación se analizan cuidadosamente todos los casos posibles para evitar ambigüedades o resultados incorrectos.
+Cada archivo contiene las funciones correspondientes a su estructura de datos.
 
-### 2. ¿Por qué se implementa mayorEnt en enteros.hs?
+## Análisis de enteros.hs y entero.hs
 
-La operación `mayorEnt` se implementa para poder comparar dos valores del tipo `Entero`. Esta función es necesaria para definir correctamente otras operaciones, ya que permite determinar cuál número es mayor y manejar adecuadamente los signos positivos y negativos. Además, facilita la implementación de operaciones como resta o comparación que requieren conocer el orden entre los valores.
+### Diferencias entre implementaciones
 
-### 3. Implementación preferida
+La diferencia principal entre ambos archivos es la forma en que manejan los casos de los números enteros.
+En `entero.hs` las operaciones se implementan de manera más directa, mientras que en `enteros.hs` se consideran más casos, especialmente cuando se combinan números positivos y negativos.
 
-Si se tuviera que elegir una sola implementación, sería preferible quedarse con la del archivo `enteros.hs`, ya que contempla más casos y maneja de forma explícita las diferentes combinaciones entre números positivos y negativos. Esto hace que el código sea más claro, más seguro y menos propenso a errores. Aunque puede ser más largo, resulta más completo y fácil de mantener.
+Esto hace que la implementación de `enteros.hs` sea más completa y detallada.
+
+### ¿Por qué se implementa mayorEnt?
+
+La función `mayorEnt` permite comparar dos valores del tipo entero definido. Esta función es necesaria para poder implementar correctamente operaciones como la resta o la suma con signos, ya que ayuda a determinar cuál número es mayor.
+
+### Implementación preferida
+
+Se prefiere la implementación de `enteros.hs`, porque maneja más casos y es más clara al tratar números positivos y negativos. Aunque el código es más largo, es más completo y menos propenso a errores.
 
 ## Comentarios adicionales
 
-* Todas las funciones fueron implementadas utilizando recursión estructural.
-* Se realizaron pruebas en GHCi para validar cada función.
-* Se documentaron ejemplos de uso en cada función.
+Se utilizaron funciones recursivas en todos los ejercicios.
+Se realizaron pruebas en GHCi para verificar el funcionamiento de cada función.
+Se separó el código en módulos para una mejor organización.
+
+
 ## Captura de ejecución
 
-![Ejecución en GHCi](<img width="535" height="253" alt="image" src="https://github.com/user-attachments/assets/252c019e-3577-4a9f-a67b-298e8e4f9d23" />
+![](<img width="535" height="253" alt="image" src="https://github.com/user-attachments/assets/252c019e-3577-4a9f-a67b-298e8e4f9d23" />
 
 )

@@ -127,6 +127,6 @@ Se separó el código en módulos para una mejor organización.
 
 ## Captura de ejecución
 
-![](<img width="535" height="253" alt="image" src="https://github.com/user-attachments/assets/252c019e-3577-4a9f-a67b-298e8e4f9d23" />
+(<img width="535" height="253" alt="image" src="https://github.com/user-attachments/assets/252c019e-3577-4a9f-a67b-298e8e4f9d23" />
 
 )

@@ -135,4 +135,7 @@ Si se tuviera que elegir una sola implementación, sería preferible quedarse co
 * Todas las funciones fueron implementadas utilizando recursión estructural.
 * Se realizaron pruebas en GHCi para validar cada función.
 * Se documentaron ejemplos de uso en cada función.
-* Se recomienda el uso de commits semánticos para mantener organizado el repositorio.
+## Captura de ejecución
+
+![Ejecución en GHCi](<img width="535" height="253" alt="image" src="https://github.com/user-attachments/assets/7b7d8d73-c4cc-40a1-98d8-3fea53f3f7a5" />
+)

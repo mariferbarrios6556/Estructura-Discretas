@@ -41,42 +41,25 @@ agregaFinal :: [a] -> a -> [a]
 agregaFinal [] y = [y]
 agregaFinal (x:xs) y = x : agregaFinal xs y
 
-
 -- Función auxiliar para obtener el último elemento
 ultimo :: [a] -> a
 ultimo [x] = x
 ultimo (_:xs) = ultimo xs
-
 
 -- Función auxiliar para quitar el último elemento
 sinUltimo :: [a] -> [a]
 sinUltimo [x] = []
 sinUltimo (x:xs) = x : sinUltimo xs
 
-
 -- Rotar una vez a la izquierda
 rotaUna :: [a] -> [a]
 rotaUna [] = []
 rotaUna (x:xs) = agregaFinal xs x
 
-
 -- Rotar una vez a la derecha
 rotaDerechaUna :: [a] -> [a]
 rotaDerechaUna [] = []
 rotaDerechaUna xs = ultimo xs : sinUltimo xs
-
-
--- 5. rota
-rota :: [a] -> Int -> [a]
-rota [] _ = []
-rota xs 0 = xs
-rota xs n
-    | n > 0 = rota (rotaUna xs) (n-1)
-    | otherwise = rota (rotaDerechaUna xs) (n+1)
-
-
--- 6. extranio (conjetura de Collatz)
--- Genera la secuencia hasta llegar a 1
 extranio :: Int -> [Int]
 extranio 1 = [1]
 extranio n

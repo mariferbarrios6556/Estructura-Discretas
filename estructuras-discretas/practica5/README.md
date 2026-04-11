@@ -34,3 +34,4 @@ Por otro lado, foldr no es recursión de cola porque primero construye las llama
 ## Comentarios adicionales
 
 Se implementaron funciones auxiliares para evitar el uso de funciones prohibidas del lenguaje. Las pruebas unitarias fueron ejecutadas usando HUnit y todas las funciones superaron los casos de prueba.
+<img width="732" height="165" alt="image" src="https://github.com/user-attachments/assets/63b446af-8d84-4624-aae4-c2a377ad6e16" />

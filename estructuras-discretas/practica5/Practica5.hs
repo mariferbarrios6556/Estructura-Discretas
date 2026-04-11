@@ -36,32 +36,4 @@ recuperaElemento (x:_) 0 = x
 recuperaElemento (_:xs) n = recuperaElemento xs (n-1)
 
 
--- Función auxiliar para agregar un elemento al final
-agregaFinal :: [a] -> a -> [a]
-agregaFinal [] y = [y]
-agregaFinal (x:xs) y = x : agregaFinal xs y
 
--- Función auxiliar para obtener el último elemento
-ultimo :: [a] -> a
-ultimo [x] = x
-ultimo (_:xs) = ultimo xs
-
--- Función auxiliar para quitar el último elemento
-sinUltimo :: [a] -> [a]
-sinUltimo [x] = []
-sinUltimo (x:xs) = x : sinUltimo xs
-
--- Rotar una vez a la izquierda
-rotaUna :: [a] -> [a]
-rotaUna [] = []
-rotaUna (x:xs) = agregaFinal xs x
-
--- Rotar una vez a la derecha
-rotaDerechaUna :: [a] -> [a]
-rotaDerechaUna [] = []
-rotaDerechaUna xs = ultimo xs : sinUltimo xs
-extranio :: Int -> [Int]
-extranio 1 = [1]
-extranio n
-    | even n = n : extranio (div n 2)
-    | otherwise = n : extranio (3*n + 1)

@@ -67,7 +67,6 @@ rotaDerechaUna xs = ultimo xs : sinUltimo xs
 
 
 -- 5. rota
--- Rota una lista n veces
 rota :: [a] -> Int -> [a]
 rota [] _ = []
 rota xs 0 = xs

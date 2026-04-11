@@ -1,6 +1,7 @@
 module Practica5 where
 
 import Data.Char (toUpper)
+import Auxiliar
 
 -- 1. hollerBack
 -- Convierte una cadena en minúsculas a mayúsculas usando recursión

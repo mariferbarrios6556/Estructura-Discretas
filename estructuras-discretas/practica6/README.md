@@ -6,7 +6,7 @@ Implementar funciones recursivas sobre árboles binarios en Haskell utilizando t
 
 ## Tiempo requerido
 
-El tiempo estimado para completar esta práctica es de aproximadamente 3 a 4 horas, considerando la implementación de funciones, pruebas unitarias y documentación.
+El tiempo estimado para completar esta práctica es de aproximadamente 7horas, considerando la implementación de funciones, pruebas unitarias y la documentación.
 
 ---
 

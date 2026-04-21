@@ -95,5 +95,7 @@ Función: listaArbol
 Descripción: convierte lista a árbol BST
 -}
 listaArbol :: Ord a => [a] -> Arbol a
-listaArbol [] = Vacio
-listaArbol (x:xs) = inserta x (listaArbol xs)
+listaArbol xs = aux xs Vacio
+  where
+    aux [] arbol = arbol
+    aux (y:ys) arbol = aux ys (inserta y arbol)

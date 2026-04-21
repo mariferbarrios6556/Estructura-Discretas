@@ -149,4 +149,6 @@ La idea es ordenar previamente la lista y seleccionar el elemento medio como ra√
 ## Comentarios adicionales
 
 Todas las funciones fueron implementadas de forma recursiva sin utilizar `foldl`, `foldr`, `maximum` o `minimum`, siguiendo los lineamientos de la pr√°ctica. Se incluyen pruebas unitarias con HUnit para validar el comportamiento esperado.
+<img width="1018" height="605" alt="image" src="https://github.com/user-attachments/assets/f69a38ae-dd68-42f5-b02c-71dfb2d964a1" />
+
 

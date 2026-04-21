@@ -1,50 +1,46 @@
-# Práctica 6 - Árboles Binarios
-
-**Nombre:** María Fernanda Barrios Vega
-**Materia:** Estructuras Discretas
-**Semestre:** 2026-I
+# Práctica 6 – Árboles Binarios
 
 ## Objetivo
 
-El objetivo de esta práctica es implementar funciones recursivas sobre árboles binarios utilizando tipos de datos algebraicos en Haskell. También se busca representar visualmente árboles binarios mediante la herramienta Mermaid.
+Implementar funciones recursivas sobre árboles binarios en Haskell utilizando tipos algebraicos. Además, representar gráficamente árboles binarios mediante Mermaid, analizar recorridos y verificar propiedades como balanceo y construcción de árboles de búsqueda.
 
 ## Tiempo requerido
 
-Aproximadamente 4 horas.
+El tiempo estimado para completar esta práctica es de aproximadamente 3 a 4 horas, considerando la implementación de funciones, pruebas unitarias y documentación.
 
 ---
 
-# Representaciones Gráficas
+# Representaciones gráficas con Mermaid
 
-## Árbol 1 (3 niveles)
+## Árbol binario 1 (3 niveles)
 
 ```mermaid
 graph TB
-A[5] --> B[3]
-A --> C[8]
+A[8] --> B[3]
+A --> C[10]
 B --> D[1]
-B --> E[Vacio]
-C --> F[7]
-C --> G[9]
+B --> E[6]
+C --> F[Vacio]
+C --> G[14]
 ```
 
-## Árbol 2 (4 niveles)
+## Árbol binario 2 (4 niveles)
 
 ```mermaid
 graph TB
-A[10] --> B[6]
-A --> C[15]
-B --> D[3]
-B --> E[8]
-D --> F[1]
-D --> G[4]
-C --> H[Vacio]
-C --> I[20]
+A[5] --> B[2]
+A --> C[9]
+B --> D[1]
+B --> E[3]
+C --> F[7]
+C --> G[12]
+F --> H[Vacio]
+F --> I[8]
 ```
 
 ---
 
-# Árboles solicitados
+# Árboles solicitados en la práctica
 
 ## a) AB 4 Vacio (AB 3 Vacio (AB 5 Vacio Vacio))
 
@@ -66,14 +62,14 @@ A[3] --> B[7]
 A --> C[6]
 B --> D[12]
 B --> E[Vacio]
-D --> F[Vacio]
-D --> G[Vacio]
-C --> H[11]
-C --> I[10]
-H --> J[Vacio]
-H --> K[Vacio]
-I --> L[Vacio]
-I --> M[Vacio]
+C --> F[11]
+C --> G[10]
+D --> H[Vacio]
+D --> I[Vacio]
+F --> J[Vacio]
+F --> K[Vacio]
+G --> L[Vacio]
+G --> M[Vacio]
 ```
 
 ## c) AB 8 (AB 6 (AB 1 Vacio (AB 4 (AB 2 Vacio Vacio) Vacio)) (AB 7 Vacio Vacio)) (AB 15 Vacio Vacio)
@@ -98,30 +94,31 @@ C --> O[Vacio]
 
 ---
 
-# Preguntas Teóricas
+# Pregunta 7
 
-### ¿El árbol resultante con foldl o foldr es balanceado?
+### ¿El árbol resultante con foldl o foldr es un BST balanceado?
 
-No necesariamente. El árbol generado depende del orden de inserción y puede quedar desbalanceado.
+No necesariamente. El árbol generado depende del orden de los elementos en la lista. Si la lista está ordenada, el árbol resultante será degenerado y perderá el balance.
 
-### ¿Cómo hacer que foldl o foldr generen árboles balanceados?
+### ¿Cuál sería la idea para que foldr o foldl generen BST balanceados?
 
-Ordenando la lista previamente y tomando el elemento medio como raíz para dividir recursivamente.
+La idea es ordenar previamente la lista y seleccionar el elemento medio como raíz. Posteriormente se divide la lista en dos sublistas (izquierda y derecha) y se repite el proceso recursivamente.
 
-### Ventajas de foldl
+### Ventajas de foldl sobre foldr
 
-* Evalúa de izquierda a derecha
-* Puede ser más eficiente con acumuladores
-* Útil para listas grandes con evaluación estricta
+* Procesa la lista de izquierda a derecha.
+* Es más eficiente con evaluación estricta.
+* Funciona mejor para acumuladores grandes.
 
-### Ventajas de foldr
+### Ventajas de foldr sobre foldl
 
-* Permite trabajar con listas infinitas
-* Funciona mejor con evaluación perezosa
-* Útil cuando se construyen estructuras recursivas
+* Permite trabajar con evaluación perezosa.
+* Funciona con listas infinitas.
+* Es útil para construir estructuras recursivas.
 
 ---
 
-# Conclusión
+# Comentarios adicionales
 
-En esta práctica se implementaron funciones recursivas sobre árboles binarios y se analizaron distintas formas de recorrido y balanceo. También se utilizó Mermaid para visualizar estructuras arbóreas, facilitando la comprensión de su organización.
+Todas las funciones fueron implementadas de forma recursiva sin utilizar `foldl`, `foldr`, `maximum` o `minimum`, siguiendo los lineamientos de la práctica. Se incluyen pruebas unitarias con HUnit para validar el comportamiento esperado.
+
